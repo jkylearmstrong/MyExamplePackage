@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrapper_t_ks_test.R
 \name{wrapper.t_ks_test}
 \alias{wrapper.t_ks_test}
-\title{The function `wrapper.t_ks_test` below takes in:}
+\title{t-test / ks-test wrapper}
 \usage{
 wrapper.t_ks_test(
   df,
@@ -27,7 +27,7 @@ wrapper.t_ks_test(
 A row-tibble with columns: Feature, mean_diff_est, ttest.pvalue, mean_Target, mean_Control, kstest.pvalue, N_Target, N_Control, conf.low, conf.high, statistic, sd_Target, sd_Control, parameter, method, alternative
 }
 \description{
-The function `wrapper.t_ks_test` below takes in:
+A wrapper function that performs a one-versus the rest t-test & ks-test
 }
 \examples{
 \dontrun{
