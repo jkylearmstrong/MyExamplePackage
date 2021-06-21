@@ -1,4 +1,6 @@
-#' The function `wrapper.t_ks_test` below takes in:
+#' t-test / ks-test wrapper
+#'
+#' A wrapper function that performs a one-versus the rest t-test & ks-test
 #'
 #' @param df a tibble - data-frame or connection
 #' @param factor a categorical variable in df ; note in SQLlite there is no factor variable but the user thinks of this variable as a factor
@@ -68,7 +70,7 @@ wrapper.t_ks_test <- function(df, factor, factor_level,  continuous_feature, ver
   }
 
   ttest_return <- t.test(x,y)
-  suppressWarnings('Warning in ks.test(x, y): p-value will be approximate in the presence of ties')
+
   ks.test.pvalue <- ks.test(x,y)$p.value
 
   result_row <- broom::tidy(ttest_return)
