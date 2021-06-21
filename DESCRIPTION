@@ -28,7 +28,9 @@ Imports:
     devtools (>= 2.4.2),
     testthat (>= 3.0.3),
     usethis (>= 2.0.1),
-    knitr (>= 1.33)
+    knitr (>= 1.33),
+    vcd (>= 1.4-8),
+    gplots (>= 3.0)
 Suggests:
     shiny (>= 1.6.0)
 RoxygenNote: 7.1.1
