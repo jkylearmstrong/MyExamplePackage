@@ -7,9 +7,9 @@
 \format{
 list of 3
 \describe{
-  \item{Not_features}{identifier, targets, ect}
-  \item{categorical_features}{list of categorical features }
-  \item{numeric_features}{list of numerical features}
+\item{Not_features}{identifier, targets, ect}
+\item{categorical_features}{list of categorical features }
+\item{numeric_features}{list of numerical features}
 }
 }
 \usage{

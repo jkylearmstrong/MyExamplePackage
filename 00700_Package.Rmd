@@ -1,0 +1,72 @@
+# (PART) Create an `R` package {.unnumbered}
+
+# Create an `R` package
+
+Creating an `R` package can be done in a few easy steps. 
+
+```{r, eval=FALSE}
+library(devtools)
+library(usethis)
+```
+
+```{r echo=TRUE, eval=FALSE}
+usethis::create_package("~/Documents/GitHub/MyExamplePackage")
+usethis::use_mit_license("J Kyle Armstrong")
+usethis::use_readme_md()
+usethis::use_pkgdown()
+usethis::use_testthat()
+```
+
+```{r, eval=FALSE}
+usethis::use_package("ggplot2", "Imports", min_version = TRUE)
+```
+
+-   **Imports** is used for packages that are needed by your package but that don't need to be loaded with library(). Packages referred to in @import or @importFrom statements in your Roxygen2 comments, or whose functions are accessed via the :: operator, should be here.
+
+-   **Suggests** is for packages that aren't really necessary, but that you're using in your examples, vignettes, or tests. Any package listed in Imports will need to be installed with your package, while packages listed in Suggests do not need to be installed with your package.
+
+
+```{r, eval=FALSE}
+tidyverse_packages <- c('tibble','readr','dplyr','tidyr','stringr','purrr','ggplot2','forcats')
+
+tidyverse_friends <- c('broom','lubridate','readxl','knitr','shiny','furrr','flexdashboard','yardstick')
+
+other_packages <- c('devtools','rsq','arsenal','skimr',
+                    'RSQLite','dbplyr','plotly','DT','GGally','corrr',
+                    'AMR','caret','shiny','DataExplorer','randomForest','usethis','testthat','pkgdown')
+
+purrr::walk(c(tidyverse_packages, tidyverse_friends, other_packages),
+function(package){
+usethis::use_package(package, "Imports", min_version = TRUE)
+}
+)
+```
+```{r , eval=FALSE}
+devtools::load_all()
+devtools::document()
+devtools::install()
+```
+
+```{r, eval=FALSE}
+detach(package:MyExamplePackage)
+```
+
+
+
+## How to Organize and Run Your Tests
+
+We should have a folder named R with all the R code, and one folder named tests/testthat, where all the test scripts will live. For each file with R scripts there should be another one with tests, with the same name, but prefixed by test-, as shown:
+
+```{r, eval=FALSE}
+library(testthat)
+library(MyExamplePackage)
+
+devtools::test()
+```
+
+
+## Build package site
+
+```{r, eval=FALSE}
+pkgdown::build_site()
+```

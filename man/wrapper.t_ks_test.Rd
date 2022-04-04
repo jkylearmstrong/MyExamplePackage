@@ -17,11 +17,13 @@ wrapper.t_ks_test(
 
 \item{factor}{a categorical variable in df ; note in SQLlite there is no factor variable but the user thinks of this variable as a factor}
 
-\item{factor_level}{- sets the **"first"** class in a **one-versus-rest** `t.test` and `ks.test` analysis}
+\item{factor_level}{\itemize{
+\item sets the \strong{"first"} class in a \strong{one-versus-rest} \code{t.test} and \code{ks.test} analysis
+}}
 
 \item{verbose}{was useful in creating the function to identify variables causing errors, and create output for those types of cases, set to FALSE by default}
 
-\item{continuous_feature`}{represented by a character string of the feature name to perform `t.test` and `ks.test` on}
+\item{continuous_feature`}{represented by a character string of the feature name to perform \code{t.test} and \code{ks.test} on}
 }
 \value{
 A row-tibble with columns: Feature, mean_diff_est, ttest.pvalue, mean_Target, mean_Control, kstest.pvalue, N_Target, N_Control, conf.low, conf.high, statistic, sd_Target, sd_Control, parameter, method, alternative

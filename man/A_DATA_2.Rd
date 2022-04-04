@@ -7,8 +7,8 @@
 \format{
 A data frame with 101316 rows and 133 variables:
 \describe{
-  \item{SEQN}{respondent identifier}
-  \item{DIABETES}{Diabetic status of the respondent, 1 for "Yes", 0 for "No", NA otherwise}
+\item{SEQN}{respondent identifier}
+\item{DIABETES}{Diabetic status of the respondent, 1 for "Yes", 0 for "No", NA otherwise}
 }
 }
 \source{
